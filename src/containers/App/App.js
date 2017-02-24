@@ -1,5 +1,4 @@
 import React, {Component, PropTypes} from 'react';
-import aa from '../../../public/images/aa.jpg';
 
 export default class App extends Component {
 
@@ -11,7 +10,6 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <img src={aa}/>
         <div>App html</div>
       </div>
     );
