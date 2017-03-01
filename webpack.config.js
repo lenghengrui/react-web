@@ -3,9 +3,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: __dirname + "/src/Html.js",
+  devtool: 'eval-source-map',
+
+  entry:  __dirname + "/src/Html.js",
   output: {
-    path: __dirname + "/public",
+    path: __dirname + "/public/dist",
     filename: "bundle.js"
   },
 
@@ -18,20 +20,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
         query: {
-          presets: [
-            'babel-preset-es2015',
-            'babel-preset-react',
-            'babel-preset-stage-0',
-          ].map(require.resolve),
+          presets: ['es2015','react']
         }
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules!postcss')
-      },
-      {test: /\.(jpg|png)$/, loader: "url?limit=8192"}
+      }
     ]
   }
+
 }
