@@ -7,6 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+import Html from './Html';
+import ReactDOM from 'react-dom/server';
+
 var app = express();
 
 // view engine setup
@@ -20,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', function (req, res, next) {
-  res.send('haha');
+  res.send('<!doctype>' + ReactDOM.renderToString(Html));
 });
 
 // catch 404 and forward to error handler
