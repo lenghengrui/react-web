@@ -15,7 +15,8 @@ class TestV extends React.Component {
   
   render () {
 
-    let {color, num} = this.props;
+    let color = this.props.color;
+    let num = this.props.num;
 
     return (
       <div>
