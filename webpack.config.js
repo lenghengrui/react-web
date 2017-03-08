@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   devtool: 'eval-source-map',
 
-  entry:  __dirname + "/src/Html.js",
+  entry:  __dirname + "/src/App.js",
   output: {
     path: __dirname + "/public/dist",
     filename: "bundle.js"
