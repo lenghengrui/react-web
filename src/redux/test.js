@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
       return Object.assign(state, {color: action.color});
 
     case 'green':
-      Object.assign(state, {
+       state = Object.assign(state, {
         color: action.color
       });
       console.log(action.type, state);
