@@ -11,13 +11,15 @@ class HelloV extends React.Component {
       pageName: 'Hello'
     };
   }
+
+  componentWillReceiveProps(next_props) {
+    
+  }
   
   render () {
 
     let color = this.props.color;
     let num = this.props.num;
-
-    console.log(this.props);
 
     return (
       <div>

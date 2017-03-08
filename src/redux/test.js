@@ -7,31 +7,16 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'yellow':
-      console.log(action.type, Object.assign(state, {color: action.color}));
-      return Object.assign(state, {color: action.color});
+      return Object.assign({}, state, {color: action.color});
 
     case 'green':
-       state = Object.assign(state, {
-        color: action.color
-      });
-      console.log(action.type, state);
-      return state;
+       return Object.assign({}, state, {color: action.color});
 
     case 'add': 
-      Object.assign(state, {
-        num: state.num + 1
-      });
-      console.log(action.type, state);
-      return state;
+      return Object.assign({}, state, {num: state.num + 1});
 
     case 'de': 
-      Object.assign(state, {
-        num: state.num - 1
-      });
-      console.log(action.type, state);
-      return state;
-    case 'color':
-    return Object.assign({}, state, {color: action.payload})
+      return Object.assign({}, state, {num: state.num - 1});
     default:
       return state;
   }

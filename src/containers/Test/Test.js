@@ -13,7 +13,7 @@ class TestV extends React.Component {
     };
   }
   componentWillReceiveProps(next_props) {
-    console.log(next_props);
+    
   }
   
   render () {
@@ -34,8 +34,12 @@ class TestV extends React.Component {
   }
 }
 
+TestV.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+  store: React.PropTypes.object.isRequired
+};
+
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     color: state.test.color,
     num: state.test.num
@@ -47,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
     {
       addNum:  () => ({ type: 'add' }),
       deleteNum:  () => ({ type: 'de' }),
-      changeColor:  (color) => ({ type: 'color',payload: color })
+      changeColor:  (color) => ({ type: color, color: color })
     },
     dispatch
   );
