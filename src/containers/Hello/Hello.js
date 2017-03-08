@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {Link} from 'react-router';
 
-
 class HelloV extends React.Component {
 
   constructor () {
@@ -17,6 +16,8 @@ class HelloV extends React.Component {
 
     let color = this.props.color;
     let num = this.props.num;
+
+    console.log(this.props);
 
     return (
       <div>
@@ -47,6 +48,11 @@ const mapDispatchToProps = (dispatch) => {
     },
     dispatch
   );
+};
+
+HelloV.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+  store: React.PropTypes.object.isRequired
 };
 
 let Hello = connect(mapStateToProps, mapDispatchToProps)(HelloV);

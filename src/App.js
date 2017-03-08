@@ -5,7 +5,9 @@ import {Provider} from 'react-redux';
 import AppStore from './redux/AppStore';
 import createRoutes from './routes';
 
-let store = createStore(AppStore);
+let store = createStore(AppStore,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 import Hello from './containers/Hello/Hello';
 

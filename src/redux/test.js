@@ -30,7 +30,8 @@ export default (state = initialState, action) => {
       });
       console.log(action.type, state);
       return state;
-  
+    case 'color':
+    return Object.assign({}, state, {color: action.payload})
     default:
       return state;
   }

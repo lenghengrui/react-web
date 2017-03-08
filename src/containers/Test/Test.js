@@ -12,6 +12,9 @@ class TestV extends React.Component {
       pageName: 'Test'
     };
   }
+  componentWillReceiveProps(next_props) {
+    console.log(next_props);
+  }
   
   render () {
 
@@ -32,6 +35,7 @@ class TestV extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     color: state.test.color,
     num: state.test.num
@@ -43,7 +47,7 @@ const mapDispatchToProps = (dispatch) => {
     {
       addNum:  () => ({ type: 'add' }),
       deleteNum:  () => ({ type: 'de' }),
-      changeColor:  (color) => ({ type: color })
+      changeColor:  (color) => ({ type: 'color',payload: color })
     },
     dispatch
   );
