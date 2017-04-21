@@ -22,7 +22,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
         query: {
-          presets: ['es2015','react']
+          presets: ['es2015', 'stage-1', 'react']
         }
       }
     ]

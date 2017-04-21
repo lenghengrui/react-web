@@ -7,8 +7,6 @@ export default function Routes() {
   return (
       <Router history={browserHistory}>
         <Route path="/" component={Home}></Route>
-        <Route path="/hello" component={Hello}></Route>
-        <Route path="/test" component={Test}></Route>
       </Router>
     ); 
 }

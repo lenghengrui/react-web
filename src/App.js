@@ -4,6 +4,7 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import AppStore from './redux/AppStore';
 import Routes from './routes';
+import http from './utils/http';
 
 let store = createStore(AppStore,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
@@ -18,3 +19,7 @@ ReactDOM.render(
   ,
   document.getElementById("content")
 );
+
+let hp = new http(6,3);
+console.log(hp.plus());
+console.log(http.str);
