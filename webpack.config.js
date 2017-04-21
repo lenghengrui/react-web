@@ -13,18 +13,16 @@ module.exports = {
 
   module: {
     loaders: [
-      {
-        test: /\.json$/,
-        loader: "json"
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
+      { test: /\.json$/, loader: "json" },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader',
         query: {
           presets: ['es2015', 'stage-1', 'react']
         }
-      }
+      },
+      { test: /\.css$/, loader: 'style-loader!css-loader?modules' },
+      { test: /\.(png|jpg|jpeg|PNG|JPG|JPEG)$/, loader: 'url-loader?limit=8192' },
+      { test: /\.(png|jpg|jpeg|PNG|JPG|JPEG)$/, loader: "file-loader" },
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader?modules' }
     ]
   }
 

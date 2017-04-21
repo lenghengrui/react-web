@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+let st = require('./index.css');
+
 export default class Button extends React.Component {
 
   handleButtonClick(buttonText) {
@@ -17,7 +19,7 @@ export default class Button extends React.Component {
 
   render() {
     return (
-      <button onClick={() => this.handleButtonClick(this.props.buttonText)}>{this.props.buttonText}</button>
+      <button className={st.a} onClick={() => this.handleButtonClick(this.props.buttonText)}>{this.props.buttonText}</button>
     );
   }
 }
