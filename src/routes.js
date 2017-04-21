@@ -1,8 +1,6 @@
 import * as React from 'react';
 import {Router, Route, browserHistory} from 'react-router';
 
-import Hello from './containers/Hello';
-import Test from './containers/Test';
 import Home from './containers/Home';
 
 export default function Routes() {
