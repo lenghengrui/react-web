@@ -15,12 +15,10 @@ export default class Home extends React.Component {
           <Button buttonText="变黑" /><Button buttonText="变绿" />
         </div>
         <div>
-          <img src={myImg} alt=""/>
-        </div>
-        <div>
           <button className="a">1</button>
           <button className="a">2</button>
         </div>
+        asdasdasd
       </div>
     );
   }

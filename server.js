@@ -6,6 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
+var config;
+
+if (file_exists('./config/local.json')) {
+    config = require('./config/local.json');
+} else {
+    config = require('./config/config.json');
+}
+
+console.log('server env:');
+console.log(config);
+
 var app = express();
 
 app.use(logger('dev'));
@@ -16,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/*', (req, res) => {
-  res.sendfile(path.join(__dirname, 'src/index.html'));
+  res.sendFile(path.join(__dirname, 'public/dist/index.html'));
 });
 
 // catch 404 and forward to error handler
@@ -45,7 +56,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '5000');
+var port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
 
 /**
