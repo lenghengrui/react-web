@@ -24,8 +24,18 @@ let webpackConfig = {
     },
     module: {
         rules: [
-            { test: /\.js?$/, loader: 'babel-loader', query: { presets: ['es2015', 'stage-1', 'react'] } },
-            { test: /\.(png|jpg|gif|jpeg)$/, use: 'url-loader?limit=8192' },
+            // { test: /\.js?$/, loader: 'babel-loader', query: { presets: ['es2015', 'stage-1', 'react'] } },
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                options: {
+                    presets: ['es2015', 'stage-1', 'react'],
+                    cacheDirectory: false,
+                }
+
+            },
+            { test: /\.(png|jpg|gif|jpeg)$/, use: 'url-loader?limit=8192&name=./[name].[ext]?[hash]' },
             { test: /\.css$/, use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?modules' }) },
             { test: /\.scss$/, use: ["style-loader", "css-loader", "sass-loader"] }
         ]
