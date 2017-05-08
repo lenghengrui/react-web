@@ -2,13 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-var config;
-
-if (file_exists('./config/local.json')) {
-    config = require('./config/local.json');
-} else {
-    config = require('./config/config.json');
-}
+const config = require('./config');
 
 let webpackConfig = {
     entry: [],

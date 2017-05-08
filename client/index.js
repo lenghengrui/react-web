@@ -19,7 +19,3 @@ ReactDOM.render(
   ,
   document.getElementById("content")
 );
-
-let hp = new http(6,3);
-console.log(hp.plus());
-console.log(http.str);

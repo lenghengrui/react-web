@@ -5,15 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
-
-var config;
-
-if (file_exists('./config/local.json')) {
-    config = require('./config/local.json');
-} else {
-    config = require('./config/config.json');
-}
-
+const config = require('./config');
 console.log('server env:');
 console.log(config);
 

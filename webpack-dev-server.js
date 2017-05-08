@@ -2,14 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const WebpackDevServer = require("webpack-dev-server");
 const webpackConfig = require("./webpack.config.js");
-var config;
-
-if (file_exists('./config/local.json')) {
-    config = require('./config/local.json');
-} else {
-    config = require('./config/config.json');
-}
-
+const config = require('./config');
 console.log(config);
 
 webpackConfig.output.publicPath = 'http://'+ config.host +':'+ config.port +'/';
