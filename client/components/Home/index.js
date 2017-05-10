@@ -18,7 +18,7 @@ export default class Home extends React.Component {
           <button className="a">1</button>
           <button className="a">2</button>
         </div>
-        asdasdasd
+        test success
       </div>
     );
   }
