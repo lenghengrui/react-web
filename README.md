@@ -9,15 +9,14 @@ npm install webpack -g
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
-3. About config
-when exist the config/local.json use the loca.json or not use the config.json as default.json config setting.
-
-4. install other required modules:
+3. install other required modules:
 ```javascript
 npm install
 ```
 
-5. run the server(development server):
+4. run the server(development server):
 ```javascript
 npm run start
 ```
+
+5. About the config, local.json is not exist in git command, when local.json exist in your project, webpack will bundle the loca.json, or not webpack will bundle the config.json as default setting.
